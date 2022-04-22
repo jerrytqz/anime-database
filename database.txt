@@ -1,0 +1,245 @@
+Aria the Animation
+Hal Film Maker
+13
+2005
+false
+7.68
+
+Attack on Titan
+Wit Studio
+25
+2013
+false
+8.53
+
+Clannad: After Story
+Kyoto Animation
+24
+2008
+false
+8.94
+
+Date A Live IV
+GEEK TOYS
+1
+2022
+true
+8.13
+
+Death Note
+Madhouse
+37
+2006
+false
+8.63
+
+Flowers of Evil
+Zexcs
+13
+2013
+false
+7.15
+
+Fullmetal Alchemist: Brotherhood
+Bones
+64
+2009
+false
+9.14
+
+Ghost in the Shell: Stand Alone Complex
+Production I.G
+26
+2002
+false
+8.43
+
+Healer Girl
+Studio 3Hz
+2
+2022
+true
+6.79
+
+Hunter x Hunter (2011)
+Madhouse
+148
+2011
+false
+9.05
+
+K-On!
+Kyoto Animation
+13
+2009
+false
+7.85
+
+K-On!!
+Kyoto Animation
+26
+2010
+false
+8.17
+
+Kaguya-sama: Love Is War - Ultra Romantic
+A-1 Pictures
+1
+2022
+true
+9.00
+
+Kill la Kill
+Trigger
+24
+2013
+false
+8.05
+
+Love All Play
+Nippon Animation
+2
+2022
+true
+6.64
+
+March Comes In Like a Lion
+Shaft
+22
+2016
+false
+8.40
+
+March Comes In Like a Lion 2nd Season
+Shaft
+22
+2017
+false
+8.96
+
+Monster
+Madhouse
+74
+2004
+false
+8.82
+
+Naruto
+Studio Pierrot
+220
+2002
+false
+7.97
+
+Neon Genesis Evangelion
+Gainax
+26
+1995
+false
+8.34
+
+One Piece
+Toei Animation
+1013
+1999
+true
+8.63
+
+One Punch Man
+Madhouse
+12
+2015
+false
+8.51
+
+Ping Pong the Animation
+Tatsunoko Production
+11
+2014
+false
+8.62
+
+Shikimori's Not Just a Cutie
+Doga Kobo
+1
+2022
+true
+7.64
+
+Spy x Family
+Wit Studio
+1
+2022
+true
+9.03
+
+Steins;Gate
+White Fox
+24
+2011
+false
+9.09
+
+Sword Art Online
+A-1 Pictures
+25
+2012
+false
+7.20
+
+Texhnolyze
+Madhouse
+22
+2003
+false
+7.76
+
+The Demon Girl Next Door 2
+J.C.Staff
+1
+2022
+true
+7.69
+
+The Promised Neverland
+CloverWorks
+12
+2019
+false
+8.55
+
+The Promised Neverland Season 2
+CloverWorks
+11
+2021
+false
+5.38
+
+Tokyo Ghoul
+Studio Pierrot
+12
+2014
+false
+7.80
+
+White Album 2
+Satelight
+13
+2013
+false
+7.64
+
+Wonder Egg Priority
+CloverWorks
+12
+2021
+false
+7.74
+
+Ya Boy Kongming!
+P.A. Works
+1
+2022
+true
+8.03
+

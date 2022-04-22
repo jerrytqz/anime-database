@@ -1,0 +1,7 @@
+anime.o
+database.o
+main_run
+main.o
+menu.o
+
+.DS_Store
