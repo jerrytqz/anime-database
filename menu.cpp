@@ -97,6 +97,13 @@ void Menu::list() const {
                 Menu::print_database(); 
                 return; 
             case '5': 
+                Menu::print_next_line("(a) Airing First or (b) Not Airing First: ");
+                input2 = Menu::get_sub_choice();
+                if (input2 == -1) return; 
+                database->sort_by_airing(input2); 
+                Menu::print_database(); 
+                return; 
+            case '6': 
                 Menu::print_next_line("(a) Ascending or (b) Descending: ");
                 input2 = Menu::get_sub_choice();
                 if (input2 == -1) return; 
@@ -391,7 +398,8 @@ void Menu::print_list_page() const {
         "(2) Studio",
         "(3) Number of episodes",
         "(4) Year airing began",
-        "(5) Score on MyAnimeList"
+        "(5) Currently airing or not",
+        "(6) Score on MyAnimeList"
     };
     int y = 0; 
 

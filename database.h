@@ -61,19 +61,23 @@ public:
 
     // Sorts the database by the studio name of each anime. This will be done alphabetically if 
     // alphabetical is true, otherwise it will be done reverse alphabetically. 
-    void sort_by_studio(bool alphabetical); 
-
-    // Sorts the database by the score of each anime. This will be done in ascending order if 
-    // ascending is true, otherwise it will be done in descending order. 
-    void sort_by_score(bool ascending);
+    void sort_by_studio(bool alphabetical);
 
     // Sorts the database by the number of episodes of each anime. This will be done in ascending 
     // order if ascending is true, otherwise it will be done in descending order. 
-    void sort_by_num_episodes(bool ascending);
+    void sort_by_num_episodes(bool ascending); 
 
     // Sorts the database by the start year of each anime. This will be done in ascending 
     // order if ascending is true, otherwise it will be done in descending order. 
     void sort_by_start_year(bool ascending);
+
+    // Sorts the database by whether or not the anime are currently airing. If airing_first is true, 
+    // the anime that are currently airing will be placed first, last otherwise. 
+    void sort_by_airing(bool airing_first); 
+
+    // Sorts the database by the score of each anime. This will be done in ascending order if 
+    // ascending is true, otherwise it will be done in descending order. 
+    void sort_by_score(bool ascending);
 
     // Searches the database by name and returns a vector of the indices of all matching records. 
     // If exact is true, the search will only find records with a name matching input exactly. 

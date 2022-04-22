@@ -91,22 +91,6 @@ void Database::list() const {
     }
 }
 
-void Database::sort_by_studio(bool alphabetical) {
-    if (alphabetical) {
-        sort(
-            vec.begin(), 
-            vec.end(), 
-            [](Anime a, Anime b) { return a.get_studio() < b.get_studio(); }
-        );
-    } else {
-        sort(
-            vec.begin(), 
-            vec.end(), 
-            [](Anime a, Anime b) { return a.get_studio() > b.get_studio(); }
-        );
-    }
-}
-
 void Database::sort_by_name(bool alphabetical) {
     if (alphabetical) {
         sort(
@@ -123,18 +107,18 @@ void Database::sort_by_name(bool alphabetical) {
     }
 }
 
-void Database::sort_by_score(bool ascending) {
-    if (ascending) {
+void Database::sort_by_studio(bool alphabetical) {
+    if (alphabetical) {
         sort(
             vec.begin(), 
             vec.end(), 
-            [](Anime a, Anime b) { return a.get_score() < b.get_score(); }
+            [](Anime a, Anime b) { return a.get_studio() < b.get_studio(); }
         );
     } else {
         sort(
             vec.begin(), 
             vec.end(), 
-            [](Anime a, Anime b) { return a.get_score() > b.get_score(); }
+            [](Anime a, Anime b) { return a.get_studio() > b.get_studio(); }
         );
     }
 }
@@ -167,6 +151,38 @@ void Database::sort_by_start_year(bool ascending) {
             vec.begin(), 
             vec.end(), 
             [](Anime a, Anime b) { return a.get_start_year() > b.get_start_year(); }
+        );
+    }
+}
+
+void Database::sort_by_airing(bool airing_first) {
+    if (airing_first) {
+        sort(
+            vec.begin(), 
+            vec.end(), 
+            [](Anime a, Anime b) { return a.get_airing() && !b.get_airing(); }
+        );
+    } else {
+        sort(
+            vec.begin(), 
+            vec.end(), 
+            [](Anime a, Anime b) { return !a.get_airing() && b.get_airing(); }
+        );
+    }
+}
+
+void Database::sort_by_score(bool ascending) {
+    if (ascending) {
+        sort(
+            vec.begin(), 
+            vec.end(), 
+            [](Anime a, Anime b) { return a.get_score() < b.get_score(); }
+        );
+    } else {
+        sort(
+            vec.begin(), 
+            vec.end(), 
+            [](Anime a, Anime b) { return a.get_score() > b.get_score(); }
         );
     }
 }

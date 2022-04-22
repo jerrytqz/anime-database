@@ -5,3 +5,4 @@ main.o
 menu.o
 
 .DS_Store
+.vscode
