@@ -2,7 +2,7 @@
 
 A database of anime complete with a built-in menu system
 
-## Set up and run
+## Set Up and Run
 
 ```
 apt install libncurses5-dev libncursesw5-dev
@@ -10,7 +10,7 @@ make
 ./main_run
 ```
 
-## Database format
+## Database Format
 
 The database reads in data from *database.txt*. Each entry in the file should be formatted like so:
 ```
