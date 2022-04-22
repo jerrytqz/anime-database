@@ -23,7 +23,7 @@ Score of the anime on MyAnimeList
 
 ```
 
-Sample entries are provided in *database.txt*.  
+Note that the empty line at the end is part of the entry. Sample entries are provided in *database.txt*.  
 
 ## Features 
 
