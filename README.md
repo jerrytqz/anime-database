@@ -1,7 +1,6 @@
 # anime-database
 
-A database of anime complete with a built-in menu system to track any anime that is currently 
-airing or has already finished airing
+A database of anime complete with a built-in menu system
 
 ## Set up and run
 
@@ -19,7 +18,7 @@ The name of the anime
 The studio that created the anime 
 Current number of episodes
 Year the anime started airing
-Whether the anime is still airing (*true* or *false*)
+Whether the anime is still airing ("true" or "false")
 Score of the anime on MyAnimeList
 
 ```
@@ -47,7 +46,7 @@ Sample entries are provided in *database.txt*.
 - Remove by searching exactly or using keywords for string fields 
 
 ## Images
-![Home](images/Menu.png "Home")
+![Home](images/Home.png "Home")
 ![List](images/List.png "List")
 ![Search](images/Search.png "Search")
 ![Add](images/Add.png "Add")
