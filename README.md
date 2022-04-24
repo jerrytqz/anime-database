@@ -2,7 +2,7 @@
 
 A database of anime complete with a built-in menu system (a command-line interface)
 
-## Set up and run
+## Set Up and Run
 
 ```
 apt install libncurses5-dev libncursesw5-dev
@@ -10,7 +10,7 @@ make
 ./main_run
 ```
 
-## Database format
+## Database Format
 
 The database reads in data from *database.txt*. Each entry in the file should be formatted like so:
 ```
@@ -23,7 +23,7 @@ Score of the anime from 1.00 to 10.00 inclusive (2 decimal places)
 
 ```
 
-Sample entries are provided in *database.txt*.  
+Note that the empty line at the end is part of the entry. Sample entries are provided in *database.txt*.  
 
 ## Features 
 
