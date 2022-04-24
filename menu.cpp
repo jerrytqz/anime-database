@@ -320,7 +320,7 @@ void Menu::add() {
     }
     Menu::print_next_line(); 
 
-    Menu::print_next_line("Enter the score of the anime on MyAnimeList: ");
+    Menu::print_next_line("Enter the score of the anime: ");
     getnstr(score, MAX_SCORE_LENGTH);
     while (!confirm_score_format(string(score))) {
         string error = (
@@ -399,7 +399,7 @@ void Menu::print_list_page() const {
         "(3) Number of episodes",
         "(4) Year airing began",
         "(5) Currently airing or not",
-        "(6) Score on MyAnimeList"
+        "(6) Score"
     };
     int y = 0; 
 
@@ -424,7 +424,7 @@ void Menu::print_search_page() const {
         "(3) Number of episodes",
         "(4) Year airing began",
         "(5) Currently airing or not",
-        "(6) Score on MyAnimeList"
+        "(6) Score"
     };
     int y = 0; 
 
@@ -454,7 +454,7 @@ void Menu::print_remove_page() const {
         "(3) Number of episodes",
         "(4) Year airing began",
         "(5) Currently airing or not",
-        "(6) Score on MyAnimeList"
+        "(6) Score"
     };
     int y = 0; 
 

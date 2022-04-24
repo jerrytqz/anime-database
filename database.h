@@ -28,7 +28,7 @@ public:
     // Current number of episodes
     // Year the anime started airing
     // Whether the anime is still airing ("true" or "false")
-    // Score of the anime on MyAnimeList
+    // Score of the anime 
     // EMPTY LINE
     Database(const string& file_name); 
 

@@ -1,6 +1,6 @@
 # anime-database
 
-A database of anime complete with a built-in menu system
+A database of anime complete with a built-in menu system (a command-line interface)
 
 ## Set up and run
 
@@ -19,7 +19,7 @@ The studio that created the anime
 Current number of episodes
 Year the anime started airing
 Whether the anime is still airing ("true" or "false")
-Score of the anime on MyAnimeList
+Score of the anime from 1.00 to 10.00 inclusive (2 decimal places)
 
 ```
 
