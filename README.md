@@ -1,6 +1,6 @@
 # anime-database
 
-A database of anime complete with a built-in menu system
+A database of anime complete with a built-in menu system (a command-line interface)
 
 ## Set Up and Run
 
