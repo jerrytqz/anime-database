@@ -10,8 +10,6 @@
 #include "database.h"
 #include "ncurses.h"
 
-using namespace std; 
-
 class Menu {
 private: 
     Database* database; 
@@ -31,7 +29,7 @@ private:
     // that needs the user to search for records before doing something, such as remove(). 1 is 
     // returned if the user searched for something, -1 is returned otherwise (i.e. user wanted to
     // go back to the home page).
-    int search(vector<int>& search_result) const; 
+    int search(std::vector<int>& search_result) const; 
 
     // Shows the page to add records and implements the associated functionalities. 
     void add(); 
@@ -50,18 +48,18 @@ private:
     void print_remove_page() const; 
 
     // Prints title at (x, y) and underlines it. 
-    void print_header(int y, int x, const string& title) const;  
+    void print_header(int y, int x, const std::string& title) const;  
 
     // Prints the string line on line below the current one. If left_align is true, the line will 
     // be printed starting from the left of the screen. 
-    void print_next_line(const string& line = "", bool left_align = true) const; 
+    void print_next_line(const std::string& line = "", bool left_align = true) const; 
 
     // Prints a table of all records in database on a fresh page. 
     void print_database() const; 
 
     // Prints all records in database at the given indices on a fresh page. If key_return is true,
     // the function will only return once the user presses a key. 
-    void print_database_portion(const vector<int>& indices, bool key_return = true) const;
+    void print_database_portion(const std::vector<int>& indices, bool key_return = true) const;
 
     // Labels each column of the database with its respective description
     void print_database_label() const;
@@ -73,14 +71,14 @@ private:
     int get_sub_choice() const; 
 
     // Returns true if every character in input is a digit, false otherwise. 
-    bool confirm_int(string input) const; 
+    bool confirm_int(std::string input) const; 
 
     // Returns true if input is a properly formatted score (a number between 1.00 and 10.00 
     // inclusive to exactly 2 decimal places), false otherwise. 
-    bool confirm_score_format(string input) const; 
+    bool confirm_score_format(std::string input) const; 
 
     // Determines if input has whitespace at the beginning or end. 
-    bool needs_trim(string input) const;
+    bool needs_trim(std::string input) const;
 public: 
     Menu(Database* datab);
 

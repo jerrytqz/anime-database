@@ -2,8 +2,6 @@
 
 #include "menu.h"
 
-using namespace std; 
-
 namespace {
     const int MAX_GENERAL_INPUT_LENGTH = 50; 
     const int MAX_NAME_LENGTH = 50;
@@ -122,13 +120,13 @@ void Menu::search() const {
     erase();
     Menu::print_search_page();
     
-    vector<int> result;
+    std::vector<int> result;
     if (Menu::search(result) == -1) return; 
 
     print_database_portion(result);
 }
 
-int Menu::search(vector<int>& search_result) const {
+int Menu::search(std::vector<int>& search_result) const {
     int input2 = 0; 
     char input3[MAX_GENERAL_INPUT_LENGTH + 1];
 
@@ -141,7 +139,7 @@ int Menu::search(vector<int>& search_result) const {
                 if (input2 == -1) return -1; 
                 Menu::print_next_line("Enter name: ");
                 getnstr(input3, MAX_NAME_LENGTH);
-                search_result = database->search_by_name(string(input3), input2);
+                search_result = database->search_by_name(std::string(input3), input2);
                 return 1; 
             case '2':
                 Menu::print_next_line("(a) Exact or (b) Contains: ");
@@ -149,7 +147,7 @@ int Menu::search(vector<int>& search_result) const {
                 if (input2 == -1) return -1; 
                 Menu::print_next_line("Enter studio: ");
                 getnstr(input3, MAX_STUDIO_LENGTH);
-                search_result = database->search_by_studio(string(input3), input2);
+                search_result = database->search_by_studio(std::string(input3), input2);
                 return 1; 
             case '3':
                 Menu::print_next_line("(a) Exact or (b) Range: ");
@@ -159,7 +157,9 @@ int Menu::search(vector<int>& search_result) const {
                     if (input2 == 1) {
                         Menu::print_next_line("Enter number: ");
                         getnstr(input3, MAX_NUM_EPISODES_DIGITS);
-                        search_result = database->search_by_num_episodes(stoi(string(input3)));
+                        search_result = database->search_by_num_episodes(
+                            std::stoi(std::string(input3))
+                        );
                     } else {
                         char input4[MAX_GENERAL_INPUT_LENGTH + 1];
                         Menu::print_next_line("Enter lower bound: ");
@@ -167,8 +167,8 @@ int Menu::search(vector<int>& search_result) const {
                         printw("Enter upper bound: ");
                         getnstr(input4, MAX_NUM_EPISODES_DIGITS); 
                         search_result = database->search_by_num_episodes(
-                            stoi(string(input3)), 
-                            stoi(string(input4))
+                            std::stoi(std::string(input3)), 
+                            std::stoi(std::string(input4))
                         );
                     }
                 } catch (...) {
@@ -186,7 +186,9 @@ int Menu::search(vector<int>& search_result) const {
                     if (input2 == 1) {
                         Menu::print_next_line("Enter number: ");
                         getnstr(input3, MAX_START_YEAR_DIGITS);
-                        search_result = database->search_by_start_year(stoi(string(input3)));
+                        search_result = database->search_by_start_year(
+                            std::stoi(std::string(input3))
+                        );
                     } else {
                         char input4[MAX_GENERAL_INPUT_LENGTH + 1];
                         Menu::print_next_line("Enter lower bound: ");
@@ -194,8 +196,8 @@ int Menu::search(vector<int>& search_result) const {
                         printw("Enter upper bound: ");
                         getnstr(input4, MAX_START_YEAR_DIGITS); 
                         search_result = database->search_by_start_year(
-                            stoi(string(input3)), 
-                            stoi(string(input4))
+                            std::stoi(std::string(input3)), 
+                            std::stoi(std::string(input4))
                         );
                     }
                 } catch (...) {
@@ -219,7 +221,7 @@ int Menu::search(vector<int>& search_result) const {
                     if (input2 == 1) {
                         Menu::print_next_line("Enter number: ");
                         getnstr(input3, MAX_SCORE_LENGTH);
-                        search_result = database->search_by_score(stod(string(input3)));
+                        search_result = database->search_by_score(std::stod(std::string(input3)));
                     } else {
                         char input4[MAX_GENERAL_INPUT_LENGTH + 1];
                         Menu::print_next_line("Enter lower bound: ");
@@ -227,8 +229,8 @@ int Menu::search(vector<int>& search_result) const {
                         printw("Enter upper bound: ");
                         getnstr(input4, MAX_SCORE_LENGTH); 
                         search_result = database->search_by_score(
-                            stod(string(input3)), 
-                            stod(string(input4))
+                            std::stod(std::string(input3)), 
+                            std::stod(std::string(input4))
                         );
                     }
                 } catch (...) {
@@ -264,14 +266,14 @@ void Menu::add() {
     Menu::print_next_line();
     Menu::print_next_line("Enter name of anime: ");
     getnstr(name, MAX_NAME_LENGTH);
-    while (string(name).empty() || Menu::needs_trim(string(name))) {
+    while (std::string(name).empty() || Menu::needs_trim(std::string(name))) {
         printw("Please enter a name at least one character long without hanging whitespace: ");
         getnstr(name, MAX_NAME_LENGTH);
     }
-    vector<int> existing = database->search_by_name(string(name), true); 
+    std::vector<int> existing = database->search_by_name(std::string(name), true); 
     if (existing.size() > 0) {
-        string overwrite_message = (
-            "An anime called " + string(name) + " already exists. (a) Overwrite or (b) Stop: "
+        std::string overwrite_message = (
+            "An anime called " + std::string(name) + " already exists. (a) Overwrite or (b) Stop: "
         );
         printw(overwrite_message.c_str());
         overwrite = Menu::get_sub_choice();
@@ -281,16 +283,16 @@ void Menu::add() {
 
     Menu::print_next_line("Enter studio that produced the anime: "); 
     getnstr(studio, MAX_STUDIO_LENGTH); 
-    while (string(studio).empty() || Menu::needs_trim(string(studio))) {
+    while (std::string(studio).empty() || Menu::needs_trim(std::string(studio))) {
         printw("Please enter a name at least one character long without hanging whitespace: ");
         getnstr(studio, MAX_STUDIO_LENGTH);
     }
 
     Menu::print_next_line("Enter the number of episodes the anime has: ");
     getnstr(num_episodes, MAX_NUM_EPISODES_DIGITS);
-    while (!confirm_int(string(num_episodes))) {
-        string error = (
-            "Please enter a whole number with at most " + to_string(MAX_NUM_EPISODES_DIGITS) 
+    while (!confirm_int(std::string(num_episodes))) {
+        std::string error = (
+            "Please enter a whole number with at most " + std::to_string(MAX_NUM_EPISODES_DIGITS) 
             + " digits: "
         );
         printw(error.c_str());
@@ -300,13 +302,13 @@ void Menu::add() {
     Menu::print_next_line("Enter the year the anime started airing: ");
     getnstr(start_year, MAX_START_YEAR_DIGITS);
     while (
-        !confirm_int(string(start_year)) 
-        || stoi(string(start_year)) < MIN_START_YEAR 
-        || stoi(string(start_year)) > MAX_START_YEAR
+        !confirm_int(std::string(start_year)) 
+        || std::stoi(std::string(start_year)) < MIN_START_YEAR 
+        || std::stoi(std::string(start_year)) > MAX_START_YEAR
     ) {
-        string error = (
-            "Please enter an integer between " + to_string(MIN_START_YEAR) + " and " 
-            + to_string(MAX_START_YEAR) + " inclusive: "
+        std::string error = (
+            "Please enter an integer between " + std::to_string(MIN_START_YEAR) + " and " 
+            + std::to_string(MAX_START_YEAR) + " inclusive: "
         );
         printw(error.c_str());
         getnstr(start_year, MAX_START_YEAR_DIGITS);
@@ -322,8 +324,8 @@ void Menu::add() {
 
     Menu::print_next_line("Enter the score of the anime: ");
     getnstr(score, MAX_SCORE_LENGTH);
-    while (!confirm_score_format(string(score))) {
-        string error = (
+    while (!confirm_score_format(std::string(score))) {
+        std::string error = (
             "Please enter a number between 1.00 and 10.00 inclusive, to exactly 2 decimal places: "
         );
         printw(error.c_str());
@@ -331,12 +333,12 @@ void Menu::add() {
     }
 
     Anime to_be_added(
-        string(name),
-        string(studio),
-        stoi(string(num_episodes)),
-        stoi(string(start_year)),
+        std::string(name),
+        std::string(studio),
+        std::stoi(std::string(num_episodes)),
+        std::stoi(std::string(start_year)),
         airing,
-        stod(string(score))
+        std::stod(std::string(score))
     );
 
     if (overwrite == 1) {
@@ -354,7 +356,7 @@ void Menu::remove() {
     erase();
     Menu::print_remove_page();
     
-    vector<int> to_be_removed; 
+    std::vector<int> to_be_removed; 
     if (Menu::search(to_be_removed) == -1) return; 
     if (to_be_removed.empty()) {
         print_database_portion(to_be_removed); 
@@ -373,7 +375,7 @@ void Menu::remove() {
 }
 
 void Menu::print_home_page() const {
-    const vector<string> options = {
+    const std::vector<std::string> options = {
         "(L)ist anime",
         "(S)earch for an anime",
         "(A)dd an anime",
@@ -385,7 +387,7 @@ void Menu::print_home_page() const {
     Menu::print_header(y, 0, "Welcome to the Anime Database!");
 
     y += 3; 
-    for (string s : options) {
+    for (std::string s : options) {
         mvprintw(y += 1, 0, s.c_str()); 
     }
     
@@ -393,7 +395,7 @@ void Menu::print_home_page() const {
 }
 
 void Menu::print_list_page() const {
-    const vector<string> options = {
+    const std::vector<std::string> options = {
         "(1) Name",
         "(2) Studio",
         "(3) Number of episodes",
@@ -408,7 +410,7 @@ void Menu::print_list_page() const {
     mvprintw(y += 2, 0, "You can list by:"); 
 
     y += 2; 
-    for (string s : options) {
+    for (std::string s : options) {
         mvprintw(y += 1, 0, s.c_str()); 
     }
 
@@ -418,7 +420,7 @@ void Menu::print_list_page() const {
 }
 
 void Menu::print_search_page() const {
-    const vector<string> options = {
+    const std::vector<std::string> options = {
         "(1) Name",
         "(2) Studio",
         "(3) Number of episodes",
@@ -433,7 +435,7 @@ void Menu::print_search_page() const {
     mvprintw(y += 2, 0, "You can search by:"); 
 
     y += 2; 
-    for (string s : options) {
+    for (std::string s : options) {
         mvprintw(y += 1, 0, s.c_str()); 
     }
 
@@ -448,7 +450,7 @@ void Menu::print_add_page() const {
 }
 
 void Menu::print_remove_page() const {
-    const vector<string> options = {
+    const std::vector<std::string> options = {
         "(1) Name",
         "(2) Studio",
         "(3) Number of episodes",
@@ -463,7 +465,7 @@ void Menu::print_remove_page() const {
     mvprintw(y += 2, 0, "You can remove by:"); 
 
     y += 2; 
-    for (string s : options) {
+    for (std::string s : options) {
         mvprintw(y += 1, 0, s.c_str()); 
     }
 
@@ -472,14 +474,14 @@ void Menu::print_remove_page() const {
     mvprintw(y += 3, 0, "Enter your choice: "); 
 }
 
-void Menu::print_header(int y, int x, const string& title) const {
-    string underline(title.size(), '-'); 
+void Menu::print_header(int y, int x, const std::string& title) const {
+    std::string underline(title.size(), '-'); 
 
     mvprintw(y, x, title.c_str()); 
     mvprintw(y += 1, x, underline.c_str()); 
 }
 
-void Menu::print_next_line(const string& line, bool left_align) const {
+void Menu::print_next_line(const std::string& line, bool left_align) const {
     int cur_y, cur_x; 
     getyx(window, cur_y, cur_x);
     if (left_align) cur_x = 0; 
@@ -496,8 +498,12 @@ void Menu::print_database() const {
             Anime a = database->get(i); 
             mvprintw(y, x, a.get_name().c_str()); 
             mvprintw(y, x += MAX_NAME_LENGTH + 5, a.get_studio().c_str()); 
-            mvprintw(y, x += MAX_STUDIO_LENGTH + 5, to_string(a.get_num_episodes()).c_str()); 
-            mvprintw(y, x += MAX_NUM_EPISODES_DIGITS + 5, to_string(a.get_start_year()).c_str()); 
+            mvprintw(y, x += MAX_STUDIO_LENGTH + 5, std::to_string(a.get_num_episodes()).c_str()); 
+            mvprintw(
+                y, 
+                x += MAX_NUM_EPISODES_DIGITS + 5, 
+                std::to_string(a.get_start_year()).c_str()
+            ); 
             mvprintw(y, x += MAX_START_YEAR_DIGITS + 5, a.get_airing() ? "True" : "False"); 
             mvprintw(y, x += MAX_AIRING_LENGTH + 5, a.get_score_string().c_str()); 
             y++; x = 0; 
@@ -508,7 +514,7 @@ void Menu::print_database() const {
     getch();
 }
 
-void Menu::print_database_portion(const vector<int>& indices, bool key_return) const {
+void Menu::print_database_portion(const std::vector<int>& indices, bool key_return) const {
     erase(); 
     if (indices.size() == 0) printw("No matching anime!"); 
     else {
@@ -518,8 +524,12 @@ void Menu::print_database_portion(const vector<int>& indices, bool key_return) c
             Anime a = database->get(indices[i]);
             mvprintw(y, x, a.get_name().c_str()); 
             mvprintw(y, x += MAX_NAME_LENGTH + 5, a.get_studio().c_str()); 
-            mvprintw(y, x += MAX_STUDIO_LENGTH + 5, to_string(a.get_num_episodes()).c_str()); 
-            mvprintw(y, x += MAX_NUM_EPISODES_DIGITS + 5, to_string(a.get_start_year()).c_str()); 
+            mvprintw(y, x += MAX_STUDIO_LENGTH + 5, std::to_string(a.get_num_episodes()).c_str()); 
+            mvprintw(
+                y, 
+                x += MAX_NUM_EPISODES_DIGITS + 5, 
+                std::to_string(a.get_start_year()).c_str()
+            ); 
             mvprintw(y, x += MAX_START_YEAR_DIGITS + 5, a.get_airing() ? "True" : "False"); 
             mvprintw(y, x += MAX_AIRING_LENGTH + 5, a.get_score_string().c_str());
             y++; x = 0; 
@@ -559,7 +569,7 @@ int Menu::get_sub_choice() const {
     return -1;   
 }
 
-bool Menu::confirm_int(string input) const {
+bool Menu::confirm_int(std::string input) const {
     if (input.empty()) return false; 
     for (int i = 0; i < input.size(); i++) {
         if (input[i] < '0' || input[i] > '9') return false; 
@@ -567,7 +577,7 @@ bool Menu::confirm_int(string input) const {
     return true; 
 }
 
-bool Menu::confirm_score_format(string input) const {
+bool Menu::confirm_score_format(std::string input) const {
     if (input == "10.00") return true; 
     if (input.size() != MAX_SCORE_LENGTH - 1) return false; 
     for (int i = 2; i < input.size(); i++) {
@@ -576,7 +586,7 @@ bool Menu::confirm_score_format(string input) const {
     return ('1' <= input[0] && input[0] <= '9') && input[1] == '.'; 
 }
 
-bool Menu::needs_trim(string input) const {
+bool Menu::needs_trim(std::string input) const {
     if (input.empty()) return false; 
     return input[0] == ' ' || input[input.size() - 1] == ' ';
 }
