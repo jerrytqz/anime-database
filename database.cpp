@@ -9,7 +9,7 @@ Database::Database(const std::string& file_name)
     std::vector<std::string> fields; 
 
     file.open(data_file); 
-    while (getline(file, field)) {
+    while (std::getline(file, field)) {
         if (field.empty()) {
             Anime a(
                 fields[0], 
@@ -57,7 +57,7 @@ void Database::remove(std::vector<int>& indices, bool safe, bool copy) {
                 throw std::runtime_error("Database::remove: index out of bounds"); 
             }
         }
-        if (adjacent_find(indices.begin(), indices.end()) != indices.end()) {
+        if (std::adjacent_find(indices.begin(), indices.end()) != indices.end()) {
             throw std::runtime_error("Database::remove: indices must not contain duplicates"); 
         }
     }
@@ -141,13 +141,13 @@ void Database::sort_by_num_episodes(bool ascending) {
 
 void Database::sort_by_start_year(bool ascending) {
     if (ascending) {
-        sort(
+        std::sort(
             vec.begin(), 
             vec.end(), 
             [](Anime a, Anime b) { return a.get_start_year() < b.get_start_year(); }
         );
     } else {
-        sort(
+        std::sort(
             vec.begin(), 
             vec.end(), 
             [](Anime a, Anime b) { return a.get_start_year() > b.get_start_year(); }
