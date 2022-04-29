@@ -1,4 +1,4 @@
-CPPFLAGS = -std=c++17 -Wall -Wextra -Werror -Wfatal-errors -Wno-sign-compare -Wnon-virtual-dtor -g
+CPPFLAGS = -std=c++17 -Wall -Wextra -Wno-sign-compare 
 
 main_run: main.o anime.o database.o menu.o
 	g++ -o main_run main.o anime.o database.o menu.o -lncurses
