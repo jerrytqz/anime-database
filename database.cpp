@@ -305,5 +305,5 @@ Database::~Database() {
     }
     file.close();
 
-    std::cout << "Quit successfully!\n"; 
+    std::cout << "Saved and quit successfully!\n"; 
 }
