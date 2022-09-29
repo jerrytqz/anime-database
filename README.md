@@ -46,8 +46,8 @@ Note that the empty line at the end is part of the entry. Sample entries are pro
 - Remove by searching exactly or using keywords for string fields 
 
 ## Images
-![Home](https://starship.jerrytq.com/anime-database/home.png)
-![List](https://starship.jerrytq.com/anime-database/list.png)
-![Search](https://starship.jerrytq.com/anime-database/search.png)
-![Add](https://starship.jerrytq.com/anime-database/add.png)
-![Remove](https://starship.jerrytq.com/anime-database/remove.png)
+![Home](https://starship.jerrytq.com/anime-database/docs/home.png)
+![List](https://starship.jerrytq.com/anime-database/docs/list.png)
+![Search](https://starship.jerrytq.com/anime-database/docs/search.png)
+![Add](https://starship.jerrytq.com/anime-database/docs/add.png)
+![Remove](https://starship.jerrytq.com/anime-database/docs/remove.png)
