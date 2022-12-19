@@ -28,12 +28,12 @@ Note that the empty line at the end is part of the entry. Sample entries are pro
 - List in ascending or descending order for numeric fields
 - List in alphabetical or reverse alphabetical order for string fields
 
-### Search for an anime
+### Search for anime
 - Search by any field
 - Search exactly or in a range for numeric fields 
 - Search exactly or using keywords for string fields 
 
-### Add an anime
+### Add anime
 - Overwrite anime with the same name 
 
 ### Remove anime
@@ -43,7 +43,7 @@ Note that the empty line at the end is part of the entry. Sample entries are pro
 
 ## Images
 ![Home](https://starship.jerrytq.com/anime-database/docs/home.png)
-![List](https://starship.jerrytq.com/anime-database/docs/list.png)
-![Search](https://starship.jerrytq.com/anime-database/docs/search.png)
-![Add](https://starship.jerrytq.com/anime-database/docs/add.png)
-![Remove](https://starship.jerrytq.com/anime-database/docs/remove.png)
+![List](https://starship.jerrytq.com/anime-database/docs/list-anime.png)
+![Search](https://starship.jerrytq.com/anime-database/docs/search-anime.png)
+![Add](https://starship.jerrytq.com/anime-database/docs/add-anime.png)
+![Remove](https://starship.jerrytq.com/anime-database/docs/remove-anime.png)
