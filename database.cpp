@@ -11,6 +11,9 @@ Database::Database(const std::string& file_name)
     file.open(data_file); 
     while (std::getline(file, field)) {
         if (field.empty()) {
+            if (fields.size() != Anime::NUM_FIELDS) {
+                throw std::runtime_error("Database::Database: invalid data"); 
+            }
             Anime a(
                 fields[0], 
                 fields[1], 

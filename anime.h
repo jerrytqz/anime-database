@@ -16,6 +16,8 @@ private:
     double score; 
 
 public: 
+    static const int NUM_FIELDS = 6;
+
     Anime(const std::string& n, const std::string& st, int n_e, int s_y, bool a, double sc);
 
     std::string get_name() const;
